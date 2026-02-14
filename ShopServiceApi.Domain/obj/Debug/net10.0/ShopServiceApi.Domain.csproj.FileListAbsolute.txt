@@ -1,0 +1,11 @@
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\bin\Debug\net10.0\ShopServiceApi.Domain.deps.json
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\bin\Debug\net10.0\ShopServiceApi.Domain.dll
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\bin\Debug\net10.0\ShopServiceApi.Domain.pdb
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.AssemblyInfoInputs.cache
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.AssemblyInfo.cs
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.dll
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\refint\ShopServiceApi.Domain.dll
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.pdb
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ref\ShopServiceApi.Domain.dll
