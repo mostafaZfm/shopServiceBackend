@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\Projects\\ShopServiceApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60250BF3-E82E-4CAF-8203-DFDF9EEA92C5}|ShopServiceApi.Domain\\ShopServiceApi.Domain.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.domain\\utility\\enumextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60250BF3-E82E-4CAF-8203-DFDF9EEA92C5}|ShopServiceApi.Domain\\ShopServiceApi.Domain.csproj|solutionrelative:shopserviceapi.domain\\utility\\enumextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{78110234-010D-4F33-BD54-8D1848C880F3}|ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.infrastructure\\site\\orders\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78110234-010D-4F33-BD54-8D1848C880F3}|ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj|solutionrelative:shopserviceapi.infrastructure\\site\\orders\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E7A2A65-9601-4117-AB5D-D45A6B8061E2}|ShopServiceApi.Application\\ShopServiceApi.Application.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.application\\services\\orders\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E7A2A65-9601-4117-AB5D-D45A6B8061E2}|ShopServiceApi.Application\\ShopServiceApi.Application.csproj|solutionrelative:shopserviceapi.application\\services\\orders\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E7A2A65-9601-4117-AB5D-D45A6B8061E2}|ShopServiceApi.Application\\ShopServiceApi.Application.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.application\\services\\orders\\interface\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E7A2A65-9601-4117-AB5D-D45A6B8061E2}|ShopServiceApi.Application\\ShopServiceApi.Application.csproj|solutionrelative:shopserviceapi.application\\services\\orders\\interface\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|solutionrelative:shopserviceapi.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|solutionrelative:shopserviceapi.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60250BF3-E82E-4CAF-8203-DFDF9EEA92C5}|ShopServiceApi.Domain\\ShopServiceApi.Domain.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.domain\\utility\\enumextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60250BF3-E82E-4CAF-8203-DFDF9EEA92C5}|ShopServiceApi.Domain\\ShopServiceApi.Domain.csproj|solutionrelative:shopserviceapi.domain\\utility\\enumextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78110234-010D-4F33-BD54-8D1848C880F3}|ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.infrastructure\\site\\enum\\enumdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,18 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|solutionrelative:shopserviceapi.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|solutionrelative:shopserviceapi.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{653EC15C-3390-4A05-900E-A469944B9957}|ShopServiceApi.Api\\ShopServiceApi.Api.csproj|solutionrelative:shopserviceapi.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78110234-010D-4F33-BD54-8D1848C880F3}|ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78110234-010D-4F33-BD54-8D1848C880F3}|ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj|solutionrelative:shopserviceapi.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78110234-010D-4F33-BD54-8D1848C880F3}|ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj|d:\\projects\\shopserviceapi\\shopserviceapi.infrastructure\\shopserviceapi.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -102,11 +106,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Api\\Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "ShopServiceApi.Api\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwEEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T14:04:08.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Orders\\OrderService.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Orders\\OrderService.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Orders\\OrderService.cs",
+              "RelativeToolTip": "ShopServiceApi.Application\\Services\\Orders\\OrderService.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAzwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T13:39:25.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Orders\\Interface\\IOrderService.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Orders\\Interface\\IOrderService.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Orders\\Interface\\IOrderService.cs",
+              "RelativeToolTip": "ShopServiceApi.Application\\Services\\Orders\\Interface\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T13:39:16.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
+              "RelativeToolTip": "ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T13:13:49.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Api\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "ShopServiceApi.Api\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T12:59:38.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "EnumExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Domain\\Utility\\EnumExtensions.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Domain\\Utility\\EnumExtensions.cs",
@@ -119,59 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
-              "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
-              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
-              "RelativeToolTip": "ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T13:13:57.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
-              "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
-              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
-              "RelativeToolTip": "ShopServiceApi.Infrastructure\\Site\\Orders\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T13:13:49.682Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ShopServiceApi.Api\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ShopServiceApi.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T13:05:46.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "ShopServiceApi.Api\\Controllers\\ProductsController.cs",
-              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "ShopServiceApi.Api\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwDIAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:59:38.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Products\\ProductService.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Products\\ProductService.cs",
@@ -179,12 +196,11 @@
               "RelativeToolTip": "ShopServiceApi.Application\\Services\\Products\\ProductService.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAqwD8AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:54:49.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T12:54:49.877Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IProductService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Products\\Interface\\IProductService.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Products\\Interface\\IProductService.cs",
@@ -192,12 +208,11 @@
               "RelativeToolTip": "ShopServiceApi.Application\\Services\\Products\\Interface\\IProductService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:54:08.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T12:54:08.589Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Products\\Category.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Products\\Category.cs",
@@ -209,7 +224,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Api\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ShopServiceApi.Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T13:05:46.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
+              "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
+              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
+              "RelativeToolTip": "ShopServiceApi.Infrastructure\\Site\\Orders\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T13:13:57.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "EnumData.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Enum\\EnumData.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Enum\\EnumData.cs",
@@ -217,12 +256,11 @@
               "RelativeToolTip": "ShopServiceApi.Infrastructure\\Site\\Enum\\EnumData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:26:57.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T12:26:57.976Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ShopServiceApi.Infrastructure.csproj",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj",
               "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj",
@@ -234,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Site\\Products\\Product.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Site\\Products\\Product.cs",
@@ -242,12 +280,11 @@
               "RelativeToolTip": "ShopServiceApi.Infrastructure\\Site\\Products\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:26:05.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T12:26:05.851Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Auth\\AuthService.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Auth\\AuthService.cs",
@@ -259,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Auth\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Auth\\Interfaces\\IAuthService.cs",
@@ -271,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ITokenService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Auth\\Interfaces\\ITokenService.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Auth\\Interfaces\\ITokenService.cs",
@@ -283,20 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Program.cs",
-              "RelativeDocumentMoniker": "ShopServiceApi.Api\\Program.cs",
-              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Program.cs",
-              "RelativeToolTip": "ShopServiceApi.Api\\Program.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAowIAAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T12:40:07.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Auth\\TokenService.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Auth\\TokenService.cs",
@@ -308,20 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "ShopServiceApi.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:50:38.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "LoginResponseDto.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\Services\\Auth\\Interfaces\\LoginResponseDto.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\Services\\Auth\\Interfaces\\LoginResponseDto.cs",
@@ -333,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "AuthDto.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\DTOs\\Auth\\AuthDto.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\DTOs\\Auth\\AuthDto.cs",
@@ -345,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\Identity\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Infrastructure\\Identity\\ApplicationUser.cs",
@@ -357,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "RegisterUserDto.cs",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\DTOs\\RegisterUserDto.cs",
               "RelativeDocumentMoniker": "ShopServiceApi.Application\\DTOs\\RegisterUserDto.cs",
@@ -369,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\appsettings.json",
               "RelativeDocumentMoniker": "ShopServiceApi.Api\\appsettings.json",
@@ -381,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ShopServiceApi.Api\\Properties\\launchSettings.json",

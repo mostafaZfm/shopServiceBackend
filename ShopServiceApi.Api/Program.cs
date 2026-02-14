@@ -5,6 +5,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using ShopServiceApi.Application.Services.Auth;
 using ShopServiceApi.Application.Services.Auth.Interfaces;
+using ShopServiceApi.Application.Services.Orders;
+using ShopServiceApi.Application.Services.Orders.Interface;
 using ShopServiceApi.Application.Services.Products;
 using ShopServiceApi.Application.Services.Products.Interface;
 using ShopServiceApi.Infrastructure.Data;
@@ -127,6 +129,7 @@ if (app.Environment.IsDevelopment())
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 
 app.UseHttpsRedirection();

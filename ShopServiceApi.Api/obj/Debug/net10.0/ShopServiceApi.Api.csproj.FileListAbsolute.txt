@@ -120,4 +120,3 @@ D:\Projects\ShopServiceApi\ShopServiceApi.Api\obj\Debug\net10.0\ShopServiceApi.A
 D:\Projects\ShopServiceApi\ShopServiceApi.Api\obj\Debug\net10.0\ref\ShopServiceApi.Api.dll
 D:\Projects\ShopServiceApi\ShopServiceApi.Api\obj\Debug\net10.0\ShopServiceApi.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\ShopServiceApi\ShopServiceApi.Api\obj\Debug\net10.0\ShopServiceApi.Api.sourcelink.json
-D:\Projects\ShopServiceApi\ShopServiceApi.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

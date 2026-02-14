@@ -13,6 +13,8 @@ namespace ShopServiceApi.Infrastructure.Site.Orders
         public ApplicationUser User { get; set; } = null!;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? PaidAt { get; set; }
+        
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending; // Pending, Paid, Shipped, Completed
 
         public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();

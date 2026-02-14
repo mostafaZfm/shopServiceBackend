@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ShopServiceApi.Infrastructure.Identity;
+using ShopServiceApi.Infrastructure.Site.Orders;
 using ShopServiceApi.Infrastructure.Site.Products;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace ShopServiceApi.Infrastructure.Data
 
         public DbSet<Product> Products => Set<Product>();
         public DbSet<Category> Categories => Set<Category>();
+        public DbSet<Order> Orders => Set<Order>();
+        public DbSet<OrderItem> OrderItems => Set<OrderItem>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
