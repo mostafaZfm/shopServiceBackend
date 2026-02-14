@@ -12,3 +12,4 @@ D:\Projects\ShopServiceApi\ShopServiceApi.Infrastructure\obj\Debug\net10.0\refin
 D:\Projects\ShopServiceApi\ShopServiceApi.Infrastructure\obj\Debug\net10.0\ShopServiceApi.Infrastructure.pdb
 D:\Projects\ShopServiceApi\ShopServiceApi.Infrastructure\obj\Debug\net10.0\ShopServiceApi.Infrastructure.genruntimeconfig.cache
 D:\Projects\ShopServiceApi\ShopServiceApi.Infrastructure\obj\Debug\net10.0\ref\ShopServiceApi.Infrastructure.dll
+D:\Projects\ShopServiceApi\ShopServiceApi.Infrastructure\obj\Debug\net10.0\ShopServiceApi.Infrastructure.sourcelink.json

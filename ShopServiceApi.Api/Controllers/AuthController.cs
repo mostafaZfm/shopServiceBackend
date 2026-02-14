@@ -74,7 +74,7 @@ namespace ShopServiceApi.Api.Controllers
             var roles = await _userManager.GetRolesAsync(user);
 
             // تولید JWT
-            var token =await _token.GenerateTokenAsync(user, roles);
+            var token = _token.GenerateTokenAsync(user, roles);
 
             // پاسخ شامل JWT
             return Ok(new { token });

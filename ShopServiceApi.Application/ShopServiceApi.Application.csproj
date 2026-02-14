@@ -19,8 +19,4 @@
     <ProjectReference Include="..\ShopServiceApi.Infrastructure\ShopServiceApi.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Products\Interface\" />
-  </ItemGroup>
-
 </Project>

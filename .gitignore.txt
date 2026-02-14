@@ -1,7 +1,7 @@
 # Visual Studio
 .vs/
-*.user
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
 
@@ -9,6 +9,13 @@
 bin/
 obj/
 
-# Others
-*.log
-*.tlog
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Other
+*.DS_Store

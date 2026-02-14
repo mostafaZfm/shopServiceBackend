@@ -9,3 +9,4 @@ D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceAp
 D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\refint\ShopServiceApi.Domain.dll
 D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.pdb
 D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ref\ShopServiceApi.Domain.dll
+D:\Projects\ShopServiceApi\ShopServiceApi.Domain\obj\Debug\net10.0\ShopServiceApi.Domain.sourcelink.json
