@@ -1,21 +1,18 @@
-# Visual Studio
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Build
+# Build folders
 bin/
 obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
 
 # Rider
 .idea/
 
-# NuGet
-*.nupkg
-*.snupkg
-packages/
+# Logs
+*.log
 
-# Other
-*.DS_Store
+# OS
+.DS_Store
+Thumbs.db

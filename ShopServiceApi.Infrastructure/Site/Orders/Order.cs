@@ -14,7 +14,8 @@ namespace ShopServiceApi.Infrastructure.Site.Orders
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? PaidAt { get; set; }
-        
+        public DateTime? ShippedAt { get; set; }
+        public DateTime? CompletedAt { get; set; }
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending; // Pending, Paid, Shipped, Completed
 
         public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ShopServiceApi.Application.DTOs.Site.Order;
 using ShopServiceApi.Application.Services.Orders;
 using ShopServiceApi.Infrastructure.Site.Enum;
 using ShopServiceApi.Infrastructure.Site.Orders;
@@ -26,15 +27,15 @@ namespace ShopServiceApi.Api.Controllers
         // ====================
         // افزودن محصول به سبد خرید
         // ====================
-        [HttpPost("add/{productId:guid}")]
-        public async Task<IActionResult> AddProductToCart(Guid productId, int quantity = 1)
+        [HttpPost("add")]
+        public async Task<IActionResult> AddProductToCart([FromBody] OrderRequestDto request)
         {
             var userId = User.Identity?.Name;
-            if (string.IsNullOrEmpty(userId)) return Unauthorized();
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
 
-            await _orderService.AddProductToOrderAsync(userId, productId, quantity);
-            var cart = await _orderService.GetPendingOrderAsync(userId);
-            return Ok(cart);
+            var result = await _orderService.AddProductToOrderAsync(userId, request);
+            return Ok(result);
         }
 
         // ====================

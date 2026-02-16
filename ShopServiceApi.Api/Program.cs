@@ -88,6 +88,11 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 var app = builder.Build();
 
 // ====================
@@ -127,9 +132,6 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IOrderService, OrderService>();
 
 
 app.UseHttpsRedirection();

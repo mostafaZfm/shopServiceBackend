@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj": {}
+    "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj": {
+    "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj",
+        "projectUniqueName": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj",
         "projectName": "ShopServiceApi.Api",
-        "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj",
-        "packagesPath": "C:\\Users\\ici\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Api\\obj\\",
+        "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Api\\ShopServiceApi.Api.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj": {
-                "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj"
+              "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj": {
+                "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj"
               },
-              "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
-                "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj"
+              "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
+                "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj"
               }
             }
           }
@@ -526,20 +525,20 @@
         }
       }
     },
-    "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj": {
+    "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
+        "projectUniqueName": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
         "projectName": "ShopServiceApi.Application",
-        "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
-        "packagesPath": "C:\\Users\\ici\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\obj\\",
+        "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -548,15 +547,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
-                "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj"
+              "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
+                "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj"
               }
             }
           }
@@ -896,20 +894,20 @@
         }
       }
     },
-    "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
+    "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj",
+        "projectUniqueName": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj",
         "projectName": "ShopServiceApi.Infrastructure",
-        "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ici\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\obj\\",
+        "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ici\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -918,8 +916,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {

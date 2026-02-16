@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopServiceApi.Application.DTOs.Site.Order;
 using ShopServiceApi.Application.Services.Orders.Interface;
 using ShopServiceApi.Infrastructure.Data;
 using ShopServiceApi.Infrastructure.Site.Enum;
@@ -18,14 +19,12 @@ namespace ShopServiceApi.Application.Services.Orders
             _context = context;
         }
 
-        public async Task AddProductToOrderAsync(string userId, Guid productId, int quantity = 1)
+        public async Task<OrderResponseDto> AddProductToOrderAsync(string userId, OrderRequestDto request)
         {
-            // پیدا کردن سفارش باز (Pending) کاربر
             var order = await _context.Orders
                 .Include(o => o.Items)
                 .FirstOrDefaultAsync(o => o.UserId == userId && o.OrderStatus == OrderStatus.Pending);
 
-            // اگر سفارش وجود نداشت، ایجاد می‌کنیم
             if (order == null)
             {
                 order = new Order
@@ -35,35 +34,36 @@ namespace ShopServiceApi.Application.Services.Orders
                     CreatedAt = DateTime.UtcNow,
                     Items = new List<OrderItem>()
                 };
+
                 _context.Orders.Add(order);
             }
 
-            // بررسی اینکه محصول قبلاً وجود دارد یا خیر
-            var existingItem = order.Items.FirstOrDefault(i => i.ProductId == productId);
+            var existingItem = order.Items
+                .FirstOrDefault(i => i.ProductId == request.ProductId);
 
             if (existingItem != null)
             {
-                // افزایش تعداد
-                existingItem.Quantity += quantity;
+                existingItem.Quantity += request.Quantity;
             }
             else
             {
-                // اضافه کردن محصول جدید به OrderItem
-                var product = await _context.Products.FindAsync(productId);
+                var product = await _context.Products.FindAsync(request.ProductId);
+
                 if (product == null)
                     throw new Exception("Product not found");
 
                 order.Items.Add(new OrderItem
                 {
-                    ProductId = productId,
-                    Quantity = quantity,
+                    ProductId = product.Id,
+                    Quantity = request.Quantity,
                     UnitPrice = product.Price
                 });
             }
 
             await _context.SaveChangesAsync();
-        }
 
+            return await MapToResponseDto(order);
+        }
         public async Task<Order?> CheckoutAsync(string userId)
         {
             var order = await _context.Orders
@@ -87,6 +87,24 @@ namespace ShopServiceApi.Application.Services.Orders
                        .ThenInclude(i => i.Product)
                        .ToListAsync();
         }
+        public async Task ChangeOrderStatusAsync(int orderId, OrderStatus status)
+        {
+            var order = await _context.Orders.FindAsync(orderId);
+
+            if (order == null)
+                throw new Exception("Order not found");
+
+            order.OrderStatus = status;
+
+            if (status == OrderStatus.Paid)
+                order.PaidAt = DateTime.UtcNow;
+
+            if (status == OrderStatus.Shipped)
+                order.ShippedAt = DateTime.UtcNow;
+
+            await _context.SaveChangesAsync();
+        }
+
 
         public async Task<Order?> GetOrderByIdAsync(Guid orderId)
         {
@@ -124,5 +142,27 @@ namespace ShopServiceApi.Application.Services.Orders
         {
             throw new NotImplementedException();
         }
+
+        private OrderResponseDto MapToResponseDto(Order order)
+        {
+            return new OrderResponseDto
+            {
+                Id = order.Id,
+                UserId = order.UserId,
+                Status = order.OrderStatus.ToString(),
+                TotalPrice = order.TotalPrice,
+                PaidAt = order.PaidAt,
+                ShippedAt = order.ShippedAt,
+                CompletedAt = order.CompletedAt,
+                Items = order.Items.Select(i => new OrderItemDto
+                {
+                    ProductId = i.ProductId,
+                    ProductName = i.Product.Name,
+                    Quantity = i.Quantity,
+                    UnitPrice = i.UnitPrice
+                }).ToList()
+            };
+        }
+
     }
 }
