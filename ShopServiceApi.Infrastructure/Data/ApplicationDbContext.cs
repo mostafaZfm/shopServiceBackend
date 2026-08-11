@@ -27,16 +27,16 @@ namespace ShopServiceApi.Infrastructure.Data
         {
             base.OnModelCreating(builder);
 
+            builder.ApplyConfigurationsFromAssembly(
+                typeof(ApplicationDbContext).Assembly);
+
             builder.Entity<Product>(entity =>
             {
                 entity.Property(p => p.Name).IsRequired().HasMaxLength(200);
                 entity.Property(p => p.Price).HasPrecision(18, 2);
             });
 
-            builder.Entity<Category>(entity =>
-            {
-                entity.Property(c => c.Name).IsRequired().HasMaxLength(100);
-            });
+          
         }
     }
 }
