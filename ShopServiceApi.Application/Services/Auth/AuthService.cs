@@ -41,7 +41,8 @@ namespace ShopServiceApi.Application.Services.Auth
 
             var token = _tokenService.GenerateTokenAsync(user, roles);
 
-            return LoginResponseDto.Success(token);
+            return new LoginResponseDto() { Token = token};
+
         }
     }
 }

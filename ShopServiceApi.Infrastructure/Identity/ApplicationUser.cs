@@ -8,10 +8,10 @@ namespace ShopServiceApi.Infrastructure.Identity
 {
     public class ApplicationUser : IdentityUser
     {
-        public string FirstName { get; set; } = null!;
-        public string LastName { get; set; } = null!;
-        public string Province { get; set; } = null!;
-        public string City { get; set; } = null!;
-        public string PostalCode { get; set; } = null!;
+        public string FirstName { get; set; } = "";
+        public string LastName { get; set; } = "";
+        public string Province { get; set; } = "-";
+        public string City { get; set; } = "-";
+        public string PostalCode { get; set; } = "00000";
     }
 }

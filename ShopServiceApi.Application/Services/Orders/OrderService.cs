@@ -62,7 +62,7 @@ namespace ShopServiceApi.Application.Services.Orders
 
             await _context.SaveChangesAsync();
 
-            return await MapToResponseDto(order);
+            return MapToResponseDto(order);
         }
         public async Task<Order?> CheckoutAsync(string userId)
         {
@@ -87,7 +87,7 @@ namespace ShopServiceApi.Application.Services.Orders
                        .ThenInclude(i => i.Product)
                        .ToListAsync();
         }
-        public async Task ChangeOrderStatusAsync(int orderId, OrderStatus status)
+        public async Task ChangeOrderStatusAsync(Guid orderId, OrderStatus status)
         {
             var order = await _context.Orders.FindAsync(orderId);
 
@@ -143,7 +143,7 @@ namespace ShopServiceApi.Application.Services.Orders
             throw new NotImplementedException();
         }
 
-        private OrderResponseDto MapToResponseDto(Order order)
+        private  OrderResponseDto MapToResponseDto(Order order)
         {
             return new OrderResponseDto
             {

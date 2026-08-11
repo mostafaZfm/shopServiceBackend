@@ -18,27 +18,6 @@
     ]
   },
   {
-    "ContainingType": "ShopServiceApi.Api.Controllers.OrdersController",
-    "Method": "AddProductToCart",
-    "RelativePath": "add/{productId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "quantity",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "ShopServiceApi.Api.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -56,6 +35,22 @@
   },
   {
     "ContainingType": "ShopServiceApi.Api.Controllers.AuthController",
+    "Method": "Refresh",
+    "RelativePath": "api/Auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ShopServiceApi.Application.DTOs.Auth.RefreshRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShopServiceApi.Api.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth/register",
     "HttpMethod": "POST",
@@ -64,7 +59,49 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "ShopServiceApi.Application.DTOs.RegisterUserDto",
+        "Type": "ShopServiceApi.Application.DTOs.RegisterNewUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShopServiceApi.Api.Controllers.OrdersController",
+    "Method": "AddProductToCart",
+    "RelativePath": "api/Orders/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ShopServiceApi.Application.DTOs.Site.Order.OrderRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShopServiceApi.Api.Controllers.OrdersController",
+    "Method": "GetCart",
+    "RelativePath": "api/Orders/cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShopServiceApi.Api.Controllers.OrdersController",
+    "Method": "RemoveProductFromCart",
+    "RelativePath": "api/Orders/remove/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -150,27 +187,37 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ShopServiceApi.Api.Controllers.OrdersController",
-    "Method": "GetCart",
-    "RelativePath": "cart",
+    "ContainingType": "ShopServiceApi.Api.Controllers.ProductsController",
+    "Method": "GetLazyLoadProduct",
+    "RelativePath": "api/Products/paged",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ShopServiceApi.Api.Controllers.OrdersController",
-    "Method": "RemoveProductFromCart",
-    "RelativePath": "remove/{productId}",
-    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": true
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortField",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortOrder",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

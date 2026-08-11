@@ -1,27 +1,33 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ShopServiceApi.Application.DTOs.Site.Products;
 using ShopServiceApi.Application.Services.Products;
+using ShopServiceApi.Application.Services.Products.Interface;
 using ShopServiceApi.Infrastructure.Site.Products;
 
 namespace ShopServiceApi.Api.Controllers
 {
+    [Authorize]
+
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly ProductService _service;
+        private readonly IProductService _service;
 
-        public ProductsController(ProductService service)
+        public ProductsController(IProductService service)
         {
             _service = service;
         }
         // ====================
         // برای همه کاربران
         // ====================
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var products = await _service.GetAllAsync();
+                var products = await _service.GetAllAsync();
             return Ok(products);
         }
 
@@ -36,7 +42,7 @@ namespace ShopServiceApi.Api.Controllers
         // ====================
         // فقط ادمین
         // ====================
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] Product product)
         {
@@ -61,6 +67,12 @@ namespace ShopServiceApi.Api.Controllers
             var success = await _service.DeleteAsync(id);
             if (!success) return NotFound();
             return NoContent();
+        }
+
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetLazyLoadProduct([FromQuery] ProductQueryDto query)
+        {
+           return StatusCode(200,await _service.GetLazyLoadProduct(query));
         }
     }
 }

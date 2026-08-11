@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ShopServiceApi.Infrastructure.Site.Products
 {
-    public  class Product
+    public class Product
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = null!;
@@ -13,7 +13,7 @@ namespace ShopServiceApi.Infrastructure.Site.Products
         public string? ImageUrl { get; set; } = null!;
         public bool IsActive { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
+        public int Quantity { get; set; }
         // Optional: می‌تونیم دسته‌بندی اضافه کنیم
         public Guid? CategoryId { get; set; }
         public Category? Category { get; set; }

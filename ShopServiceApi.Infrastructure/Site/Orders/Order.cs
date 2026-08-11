@@ -19,5 +19,7 @@ namespace ShopServiceApi.Infrastructure.Site.Orders
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending; // Pending, Paid, Shipped, Completed
 
         public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public decimal TotalPrice { get; set; }
+
     }
 }

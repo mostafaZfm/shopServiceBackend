@@ -13,7 +13,7 @@ namespace ShopServiceApi.Application.Services.Orders.Interface
         Task<OrderResponseDto> AddProductToOrderAsync(string userId, OrderRequestDto request);
         public Task RemoveProductFromOrderAsync(string userId, Guid productId);
         public Task<Order?> GetPendingOrderAsync(string userId);
-        Task<OrderResponseDto?> ChangeOrderStatusAsync(Guid orderId, OrderStatus status);
+        Task ChangeOrderStatusAsync(Guid orderId, OrderStatus status);
 
 
         // Checkout

@@ -2,17 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using ShopServiceApi.Application.DTOs.Site.Order;
 using ShopServiceApi.Application.Services.Orders;
+using ShopServiceApi.Application.Services.Orders.Interface;
 using ShopServiceApi.Infrastructure.Site.Enum;
 using ShopServiceApi.Infrastructure.Site.Orders;
 using System.Security.Claims;
 
 namespace ShopServiceApi.Api.Controllers
 {
+    [Authorize] // حتما روی controller یا action باشه
+    [ApiController]
+    [Route("api/[controller]")]
     public class OrdersController : ControllerBase
     {
-        private readonly OrderService _orderService;
+        private readonly IOrderService _orderService;
 
-        public OrdersController(OrderService orderService)
+        public OrdersController(IOrderService orderService)
         {
             _orderService = orderService;
         }

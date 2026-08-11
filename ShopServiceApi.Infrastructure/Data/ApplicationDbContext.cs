@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ShopServiceApi.Infrastructure.Identity;
+using ShopServiceApi.Infrastructure.Identity.Auth;
 using ShopServiceApi.Infrastructure.Site.Orders;
 using ShopServiceApi.Infrastructure.Site.Products;
 using System;
@@ -20,6 +21,7 @@ namespace ShopServiceApi.Infrastructure.Data
         public DbSet<Category> Categories => Set<Category>();
         public DbSet<Order> Orders => Set<Order>();
         public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+        public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

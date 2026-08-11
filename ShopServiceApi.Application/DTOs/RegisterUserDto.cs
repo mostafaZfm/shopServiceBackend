@@ -7,6 +7,7 @@ namespace ShopServiceApi.Application.DTOs
     public class RegisterUserDto
     {
         public string FirstName { get; set; } = null!;
+        public string UserName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Password { get; set; } = null!;
@@ -14,5 +15,13 @@ namespace ShopServiceApi.Application.DTOs
         public string City { get; set; } = null!;
         public string PostalCode { get; set; } = null!;
         public string Role { get; set; } = "Customer"; // پیشفرض Customer
+    }
+    public class RegisterNewUserDto
+    {
+        public string UserName { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
+        public string Role { get; set; } = "Customer"; // پیشفرض Customer
+
     }
 }

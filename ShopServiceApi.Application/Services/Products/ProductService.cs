@@ -1,10 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopServiceApi.Application.DTOs.Site.Products;
 using ShopServiceApi.Application.Services.Products.Interface;
+using ShopServiceApi.Domain.Utility;
 using ShopServiceApi.Infrastructure.Data;
 using ShopServiceApi.Infrastructure.Site.Products;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ShopServiceApi.Application.Services.Products
 {
@@ -63,6 +67,52 @@ namespace ShopServiceApi.Application.Services.Products
 
             await _context.SaveChangesAsync();
             return existing;
+        }
+
+      
+
+        public async Task<ProductResponseDto> GetLazyLoadProduct(ProductQueryDto query)
+        {
+            var products = _context.Products.AsQueryable();
+
+            // 🔎 Search
+            if (!string.IsNullOrEmpty(query.Search))
+            {
+                products = products.Where(p =>
+                    p.Name.Contains(query.Search) ||
+                    p.Description.Contains(query.Search));
+            }
+
+            // 🔄 Sorting
+            if (!string.IsNullOrEmpty(query.SortField))
+            {
+                bool isAscending = query.SortOrder == "asc";
+                var allowedColumns = new[] { "Name", "Price", "CreatedAt", "Quantity" };
+
+                if (allowedColumns.Contains(query.SortField))
+                {
+                    products = products.OrderByDynamic(query.SortField, isAscending);
+                }
+            }
+            var count = await products.CountAsync();
+            var data = await products
+                .Skip(query.Page * query.PageSize)
+                .Take(query.PageSize).Select(x => new ProductDto()
+                {
+                    Name = x.Name,
+                    Price = x.Price,
+                    Quantity = x.Quantity,
+                    Description = x.Description,
+                   ImageUrl = x.ImageUrl,
+                })
+                .ToListAsync();
+            return new ProductResponseDto()
+            {
+                TotalCount = count,
+                Products = data,
+            };
+         
+           
         }
     }
 }

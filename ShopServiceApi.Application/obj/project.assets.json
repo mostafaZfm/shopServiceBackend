@@ -604,6 +604,16 @@
           }
         }
       },
+      "ShopServiceApi.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/ShopServiceApi.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopServiceApi.Domain.dll": {}
+        }
+      },
       "ShopServiceApi.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1497,6 +1507,11 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "ShopServiceApi.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ShopServiceApi.Domain/ShopServiceApi.Domain.csproj",
+      "msbuildProject": "../ShopServiceApi.Domain/ShopServiceApi.Domain.csproj"
+    },
     "ShopServiceApi.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../ShopServiceApi.Infrastructure/ShopServiceApi.Infrastructure.csproj",
@@ -1511,27 +1526,28 @@
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 8.0.0",
       "Microsoft.Extensions.Configuration.Json >= 8.0.0",
+      "ShopServiceApi.Domain >= 1.0.0",
       "ShopServiceApi.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Users\\ici\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
+      "projectUniqueName": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
       "projectName": "ShopServiceApi.Application",
-      "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Application\\obj\\",
+      "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\ShopServiceApi.Application.csproj",
+      "packagesPath": "C:\\Users\\ici\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ici\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1540,14 +1556,19 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://192.168.241.116:8082/repository/nuget-group/index.json": {},
+        "http://192.168.241.116:8082/repository/nuget-hosted/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
-              "projectPath": "D:\\programming\\Source\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj"
+            "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Domain\\ShopServiceApi.Domain.csproj": {
+              "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Domain\\ShopServiceApi.Domain.csproj"
+            },
+            "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj": {
+              "projectPath": "D:\\Projects\\ShopServiceApi\\ShopServiceApi.Infrastructure\\ShopServiceApi.Infrastructure.csproj"
             }
           }
         }
@@ -1886,5 +1907,19 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    },
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source http://192.168.241.116:8082/repository/nuget-group/index.json."
+    }
+  ]
 }

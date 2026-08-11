@@ -1,4 +1,5 @@
-﻿using ShopServiceApi.Infrastructure.Site.Products;
+﻿using ShopServiceApi.Application.DTOs.Site.Products;
+using ShopServiceApi.Infrastructure.Site.Products;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,7 @@ namespace ShopServiceApi.Application.Services.Products.Interface
         Task<Product> CreateAsync(Product product);
         Task<Product?> UpdateAsync(Product product);
         Task<bool> DeleteAsync(Guid id);
+        public Task<ProductResponseDto> GetLazyLoadProduct(ProductQueryDto model);
+
     }
 }

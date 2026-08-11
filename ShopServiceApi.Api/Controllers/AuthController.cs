@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ShopServiceApi.Application.DTOs;
 using ShopServiceApi.Application.DTOs.Auth;
 using ShopServiceApi.Application.Services.Auth.Interfaces;
 using ShopServiceApi.Infrastructure.Identity;
+using ShopServiceApi.Infrastructure.Identity.Auth;
 
 namespace ShopServiceApi.Api.Controllers
 {
@@ -28,6 +30,7 @@ namespace ShopServiceApi.Api.Controllers
             _roleManager = roleManager;
             _configuration = configuration;
             _signInManager = signInManager;
+            _token = token;
         }
         /// <summary>
         /// ثبت نام کاربر
@@ -35,20 +38,20 @@ namespace ShopServiceApi.Api.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterUserDto dto)
+        public async Task<IActionResult> Register(RegisterNewUserDto dto)
         {
             if (!await _roleManager.RoleExistsAsync(dto.Role))
                 await _roleManager.CreateAsync(new IdentityRole(dto.Role));
 
             var user = new ApplicationUser
             {
-                FirstName = dto.FirstName,
-                LastName = dto.LastName,
+                // FirstName = dto.FirstName,
+                //  LastName = dto.LastName,
                 Email = dto.Email,
-                UserName = dto.Email,
-                Province = dto.Province,
-                City = dto.City,
-                PostalCode = dto.PostalCode
+                UserName = dto.UserName,
+                //  Province = dto.Province,
+                //   City = dto.City,
+                //  PostalCode = dto.PostalCode
             };
 
             var result = await _userManager.CreateAsync(user, dto.Password);
@@ -57,7 +60,7 @@ namespace ShopServiceApi.Api.Controllers
 
             await _userManager.AddToRoleAsync(user, dto.Role);
 
-            return Ok(new { message = "User registered successfully" });
+            return Ok(new { success = true, message = "User registered successfully" });
         }
 
 
@@ -68,16 +71,53 @@ namespace ShopServiceApi.Api.Controllers
         /// <returns></returns>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto model)
-        {           
+        {
             // گرفتن یوزر از UserManager
             var user = await _userManager.FindByNameAsync(model.Username);
+            if (user == null)
+                return StatusCode(200, LoginResponseDto.Fail("کاربری با این مشخصات پیدا نشد"));
+               
+
+            // چک کردن رمز
+            var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
+            if (!passwordValid)
+                return StatusCode(200, LoginResponseDto.Fail("کاربری با این مشخصات پیدا نشد"));
+
             var roles = await _userManager.GetRolesAsync(user);
 
             // تولید JWT
             var token = _token.GenerateTokenAsync(user, roles);
+            // تولید Refresh Token طولانی
+            var refToken = Guid.NewGuid().ToString();
+            _token.GenerateRefreshTokenAsync(new RefreshToken()
+            {
+                Token = refToken,
+                UserId = user.Id,
+            });
 
-            // پاسخ شامل JWT
-            return Ok(new { token });
+            return StatusCode(200, LoginResponseDto.Success(token, refToken, $"کاربر گرامی: {user.FirstName} خوش آمدید"));
+           
+        }
+
+
+        [HttpPost("refresh")]
+        public async Task<IActionResult> Refresh([FromBody] RefreshRequestDto model)
+        {
+            var refreshTokenEntity = await _token.GetRefreshToken(model.RefreshToken);
+
+            if (refreshTokenEntity == null || refreshTokenEntity.Expiration < DateTime.UtcNow)
+                return Unauthorized();
+
+            var user = await _userManager.FindByIdAsync(refreshTokenEntity.UserId);
+            var roles = await _userManager.GetRolesAsync(user);
+
+            var newJwt =  _token.GenerateTokenAsync(user, roles);
+
+            return StatusCode(200, new LoginResponseDto()
+            {
+                IsSuccess = true,
+                Token = newJwt,
+            });
         }
 
     }
