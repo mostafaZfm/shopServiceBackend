@@ -61,7 +61,7 @@ namespace ShopServiceApi.Application.Services.Products
             existing.Name = product.Name;
             existing.Description = product.Description;
             existing.Price = product.Price;
-            existing.ImageUrl = product.ImageUrl;
+           // existing.ImageUrl = product.ImageUrl;
             existing.IsActive = product.IsActive;
             existing.CategoryId = product.CategoryId;
 
@@ -101,9 +101,9 @@ namespace ShopServiceApi.Application.Services.Products
                 {
                     Name = x.Name,
                     Price = x.Price,
-                    Quantity = x.Quantity,
+                   // Quantity = x.Quantity,
                     Description = x.Description,
-                   ImageUrl = x.ImageUrl,
+                  // ImageUrl = x.ImageUrl,
                 })
                 .ToListAsync();
             return new ProductResponseDto()
