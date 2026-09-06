@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using ShopServiceApi.Application.DTOs.Site.Order;
 using ShopServiceApi.Application.Services.Orders;
 using ShopServiceApi.Application.Services.Orders.Interface;
-using ShopServiceApi.Infrastructure.Site.Enum;
-using ShopServiceApi.Infrastructure.Site.Orders;
 using System.Security.Claims;
 
 namespace ShopServiceApi.Api.Controllers

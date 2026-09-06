@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ShopServiceApi.Domain.Entities.Orders;
+using ShopServiceApi.Domain.Entities.Products;
 using ShopServiceApi.Infrastructure.Identity;
 using ShopServiceApi.Infrastructure.Identity.Auth;
-using ShopServiceApi.Infrastructure.Site.Orders;
-using ShopServiceApi.Infrastructure.Site.Products;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ShopServiceApi.Infrastructure.Data
 {
@@ -19,8 +16,10 @@ namespace ShopServiceApi.Infrastructure.Data
 
         public DbSet<Product> Products => Set<Product>();
         public DbSet<Category> Categories => Set<Category>();
+
         public DbSet<Order> Orders => Set<Order>();
         public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+
         public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -29,14 +28,6 @@ namespace ShopServiceApi.Infrastructure.Data
 
             builder.ApplyConfigurationsFromAssembly(
                 typeof(ApplicationDbContext).Assembly);
-
-            builder.Entity<Product>(entity =>
-            {
-                entity.Property(p => p.Name).IsRequired().HasMaxLength(200);
-                entity.Property(p => p.Price).HasPrecision(18, 2);
-            });
-
-          
         }
     }
 }

@@ -1,14 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopServiceApi.Application.DTOs.Site.Products;
 using ShopServiceApi.Application.Services.Products.Interface;
+using ShopServiceApi.Domain.Entities.Products;
 using ShopServiceApi.Domain.Utility;
 using ShopServiceApi.Infrastructure.Data;
-using ShopServiceApi.Infrastructure.Site.Products;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ShopServiceApi.Application.Services.Products
 {

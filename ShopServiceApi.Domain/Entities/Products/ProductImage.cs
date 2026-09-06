@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShopServiceApi.Infrastructure.Site.Products
+namespace ShopServiceApi.Domain.Entities.Products
 {
-public class ProductImage
+    public class ProductImage
     {
         public Guid Id { get; set; }
 
@@ -16,7 +16,7 @@ public class ProductImage
 
         public Guid ProductId { get; set; }
 
-        public Product Product { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
     }
 
 }

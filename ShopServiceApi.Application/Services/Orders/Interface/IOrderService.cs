@@ -1,6 +1,6 @@
 ﻿using ShopServiceApi.Application.DTOs.Site.Order;
-using ShopServiceApi.Infrastructure.Site.Enum;
-using ShopServiceApi.Infrastructure.Site.Orders;
+using ShopServiceApi.Domain.Entities.Orders;
+using ShopServiceApi.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;

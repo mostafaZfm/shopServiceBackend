@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopServiceApi.Infrastructure.Site.Products;
+using ShopServiceApi.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.Text;

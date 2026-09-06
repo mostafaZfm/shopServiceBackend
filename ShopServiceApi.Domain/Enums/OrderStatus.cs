@@ -1,12 +1,10 @@
-﻿using ShopServiceApi.Infrastructure.Site.Products;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ShopServiceApi.Infrastructure.Site.Enum
+namespace ShopServiceApi.Domain.Enums
 {
-
     public enum OrderStatus
     {
         [Display(Name = "در انتظار پرداخت")]

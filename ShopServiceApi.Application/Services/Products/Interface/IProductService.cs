@@ -1,5 +1,5 @@
 ﻿using ShopServiceApi.Application.DTOs.Site.Products;
-using ShopServiceApi.Infrastructure.Site.Products;
+using ShopServiceApi.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ShopServiceApi.Application.DTOs.Site.Products;
 using ShopServiceApi.Application.Services.Products;
 using ShopServiceApi.Application.Services.Products.Interface;
-using ShopServiceApi.Infrastructure.Site.Products;
+using ShopServiceApi.Domain.Entities.Products;
 
 namespace ShopServiceApi.Api.Controllers
 {

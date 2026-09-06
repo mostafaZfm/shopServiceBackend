@@ -1,16 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopServiceApi.Infrastructure.Site.Products;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+using ProductEntity = ShopServiceApi.Domain.Entities.Products.Product;
 namespace ShopServiceApi.Infrastructure.Data.Configurations
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductConfiguration : IEntityTypeConfiguration<ProductEntity>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
             builder.ToTable("Products"); 
             // Primary Key
