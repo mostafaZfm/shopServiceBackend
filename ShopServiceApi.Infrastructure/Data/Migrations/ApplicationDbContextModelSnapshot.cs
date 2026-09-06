@@ -206,10 +206,13 @@ namespace ShopServiceApi.Infrastructure.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<int>("Quantity")
-                        .HasColumnType("integer");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
 
                     b.Property<decimal>("UnitPrice")
-                        .HasColumnType("numeric");
+                        .HasPrecision(18, 2)
+                        .HasColumnType("numeric(18,2)");
 
                     b.HasKey("Id");
 
@@ -219,7 +222,7 @@ namespace ShopServiceApi.Infrastructure.Data.Migrations
 
                     b.HasIndex("ProductVariantId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("ShopServiceApi.Domain.Entities.Products.Category", b =>
@@ -640,12 +643,13 @@ namespace ShopServiceApi.Infrastructure.Data.Migrations
                     b.HasOne("ShopServiceApi.Domain.Entities.Products.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ShopServiceApi.Domain.Entities.Products.Variants.ProductVariant", "ProductVariant")
                         .WithMany()
-                        .HasForeignKey("ProductVariantId");
+                        .HasForeignKey("ProductVariantId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Order");
 
