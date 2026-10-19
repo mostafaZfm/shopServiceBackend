@@ -2,7 +2,7 @@
 using ShopServiceApi.Application.DTOs.Site.Order;
 using ShopServiceApi.Application.Services.Orders.Interface;
 using ShopServiceApi.Domain.Entities.Orders;
-using ShopServiceApi.Infrastructure.Data;
+using ShopServiceApi.Abstractions.Interfaces;
 using ShopServiceApi.Domain.Enums;
 using System;
 using System.Collections.Generic;
@@ -12,9 +12,9 @@ namespace ShopServiceApi.Application.Services.Orders
 {
     public class OrderService : IOrderService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IApplicationDbContext _context;
 
-        public OrderService(ApplicationDbContext context)
+        public OrderService(IApplicationDbContext context)
         {
             _context = context;
         }

@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ShopServiceApi.Abstractions.Interfaces;
 using ShopServiceApi.Domain.Entities.Orders;
 using ShopServiceApi.Domain.Entities.Products;
 using ShopServiceApi.Infrastructure.Identity;
-using ShopServiceApi.Infrastructure.Identity.Auth;
+using ShopServiceApi.Domain.Entities.Auth;
 
 namespace ShopServiceApi.Infrastructure.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>,IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
        : base(options)
@@ -22,12 +23,27 @@ namespace ShopServiceApi.Infrastructure.Data
 
         public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
-        protected override void OnModelCreating(ModelBuilder builder)
+protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
             builder.ApplyConfigurationsFromAssembly(
                 typeof(ApplicationDbContext).Assembly);
+
+            builder.Entity<RefreshToken>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Token)
+                    .IsRequired();
+
+                entity.HasIndex(x => x.Token)
+                    .IsUnique();
+
+                entity.Property(x => x.UserId)
+                    .IsRequired();
+            });
         }
+
     }
 }

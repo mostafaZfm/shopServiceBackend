@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using ShopServiceApi.Application.Services.Auth;
+using Microsoft.OpenApi.Models;
 using ShopServiceApi.Application.Services.Auth.Interfaces;
 using ShopServiceApi.Application.Services.Orders;
 using ShopServiceApi.Application.Services.Orders.Interface;
@@ -10,8 +10,10 @@ using ShopServiceApi.Application.Services.Products;
 using ShopServiceApi.Application.Services.Products.Interface;
 using ShopServiceApi.Infrastructure.Data;
 using ShopServiceApi.Infrastructure.Identity;
+using ShopServiceApi.Infrastructure.Services.Auth;
 using System.Text;
-using Microsoft.OpenApi.Models;
+using ShopServiceApi.Abstractions.Interfaces;
+using ShopServiceApi.Infrastructure.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -114,10 +116,10 @@ builder.Services.AddCors(options =>
 });
 
 
-builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<ITokenService, TokenService>(); 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-
+builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 var app = builder.Build();
 
 // ====================

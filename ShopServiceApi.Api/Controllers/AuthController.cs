@@ -6,7 +6,8 @@ using ShopServiceApi.Application.DTOs;
 using ShopServiceApi.Application.DTOs.Auth;
 using ShopServiceApi.Application.Services.Auth.Interfaces;
 using ShopServiceApi.Infrastructure.Identity;
-using ShopServiceApi.Infrastructure.Identity.Auth;
+using ShopServiceApi.Domain.Entities.Auth;
+
 
 namespace ShopServiceApi.Api.Controllers
 {
@@ -72,53 +73,80 @@ namespace ShopServiceApi.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto model)
         {
-            // گرفتن یوزر از UserManager
             var user = await _userManager.FindByNameAsync(model.Username);
-            if (user == null)
-                return StatusCode(200, LoginResponseDto.Fail("کاربری با این مشخصات پیدا نشد"));
-               
 
-            // چک کردن رمز
-            var passwordValid = await _userManager.CheckPasswordAsync(user, model.Password);
+            if (user == null)
+                return Ok(LoginResponseDto.Fail("کاربری با این مشخصات پیدا نشد"));
+
+            var passwordValid = await _userManager.CheckPasswordAsync(
+                user, model.Password);
+
             if (!passwordValid)
-                return StatusCode(200, LoginResponseDto.Fail("کاربری با این مشخصات پیدا نشد"));
+                return Ok(LoginResponseDto.Fail("کاربری با این مشخصات پیدا نشد"));
 
             var roles = await _userManager.GetRolesAsync(user);
 
-            // تولید JWT
-            var token = _token.GenerateTokenAsync(user, roles);
-            // تولید Refresh Token طولانی
-            var refToken = Guid.NewGuid().ToString();
-            _token.GenerateRefreshTokenAsync(new RefreshToken()
-            {
-                Token = refToken,
-                UserId = user.Id,
-            });
+            var token = _token.GenerateTokenAsync(
+                user.Id,
+                user.UserName,
+                roles);
 
-            return StatusCode(200, LoginResponseDto.Success(token, refToken, $"کاربر گرامی: {user.FirstName} خوش آمدید"));
-           
+            var refreshToken = Guid.NewGuid().ToString();
+
+            await _token.GenerateRefreshTokenAsync(
+                user.Id,
+                refreshToken);
+
+            return Ok(LoginResponseDto.Success(
+                token,
+                refreshToken,
+                $"کاربر گرامی: {user.FirstName} خوش آمدید"));
         }
 
 
-        [HttpPost("refresh")]
-        public async Task<IActionResult> Refresh([FromBody] RefreshRequestDto model)
+[HttpPost("refresh")]
+public async Task<IActionResult> Refresh([FromBody] RefreshRequestDto model)
         {
-            var refreshTokenEntity = await _token.GetRefreshToken(model.RefreshToken);
+            var refreshTokenEntity =
+                await _token.GetRefreshTokenAsync(model.RefreshToken);
 
-            if (refreshTokenEntity == null || refreshTokenEntity.Expiration < DateTime.UtcNow)
+            if (refreshTokenEntity == null)
                 return Unauthorized();
 
             var user = await _userManager.FindByIdAsync(refreshTokenEntity.UserId);
+
+            if (user == null)
+                return Unauthorized();
+
+            // ابتدا توکن قبلی را باطل می‌کنیم
+            var revoked = await _token.RevokeRefreshTokenAsync(model.RefreshToken);
+
+            if (!revoked)
+                return Unauthorized();
+
+            // توکن‌های جدید را تولید می‌کنیم
             var roles = await _userManager.GetRolesAsync(user);
 
-            var newJwt =  _token.GenerateTokenAsync(user, roles);
+            var newJwt = _token.GenerateTokenAsync(
+                user.Id,
+                user.UserName,
+                roles);
 
-            return StatusCode(200, new LoginResponseDto()
+            var newRefreshToken = Guid.NewGuid().ToString();
+
+            await _token.GenerateRefreshTokenAsync(
+                user.Id,
+                newRefreshToken);
+
+            return Ok(new LoginResponseDto
             {
                 IsSuccess = true,
                 Token = newJwt,
+                RefreshToken = newRefreshToken,
+                Message = "توکن‌ها با موفقیت تمدید شدند"
             });
         }
+
 
     }
 }

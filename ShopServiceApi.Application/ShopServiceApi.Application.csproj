@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopServiceApi.Abstractions\ShopServiceApi.Abstractions.csproj" />
     <ProjectReference Include="..\ShopServiceApi.Domain\ShopServiceApi.Domain.csproj" />
-    <ProjectReference Include="..\ShopServiceApi.Infrastructure\ShopServiceApi.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

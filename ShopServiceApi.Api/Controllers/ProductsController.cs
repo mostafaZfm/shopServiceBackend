@@ -44,21 +44,21 @@ namespace ShopServiceApi.Api.Controllers
         // ====================
        // [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] Product product)
+        public async Task<IActionResult> Add([FromBody] CreateProductDto product)
         {
             var created = await _service.CreateAsync(product);
             return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] Product product)
-        {
-            if (id != product.Id) return BadRequest();
-            var updated = await _service.UpdateAsync(product);
-            if (updated == null) return NotFound();
-            return Ok(updated);
-        }
+        //[Authorize(Roles = "Admin")]
+        //[HttpPut("{id:guid}")]
+        //public async Task<IActionResult> Update(Guid id, [FromBody] Product product)
+        //{
+        //    if (id != product.Id) return BadRequest();
+        //    var updated = await _service.UpdateAsync(product);
+        //    if (updated == null) return NotFound();
+        //    return Ok(updated);
+        //}
 
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id:guid}")]

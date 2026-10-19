@@ -19,9 +19,12 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Npgsql" Version="8.0.4" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopServiceApi.Abstractions\ShopServiceApi.Abstractions.csproj" />
+    <ProjectReference Include="..\ShopServiceApi.Application\ShopServiceApi.Application.csproj" />
     <ProjectReference Include="..\ShopServiceApi.Domain\ShopServiceApi.Domain.csproj" />
   </ItemGroup>
 

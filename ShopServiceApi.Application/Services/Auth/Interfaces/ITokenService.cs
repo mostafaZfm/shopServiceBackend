@@ -1,16 +1,22 @@
-﻿using ShopServiceApi.Infrastructure.Identity;
-using ShopServiceApi.Infrastructure.Identity.Auth;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using ShopServiceApi.Domain.Entities.Auth;
 
 namespace ShopServiceApi.Application.Services.Auth.Interfaces
 {
     public interface ITokenService
     {
-        string GenerateTokenAsync(ApplicationUser user, IList<string> roles);
-        Task GenerateRefreshTokenAsync(RefreshToken refreshTokenModel);
-        Task<RefreshToken> GetRefreshToken(string token);
+        string GenerateTokenAsync(
+           string userId,
+           string? userName,
+           IList<string> roles);
 
+        Task GenerateRefreshTokenAsync(
+            string userId,
+            string token);
+
+        Task<RefreshToken?> GetRefreshTokenAsync(string token);
+
+        Task<bool> RevokeRefreshTokenAsync(string token);
     }
 }

@@ -8,12 +8,15 @@ namespace ShopServiceApi.Application.Services.Products.Interface
 {
     public interface IProductService
     {
-        Task<IEnumerable<Product>> GetAllAsync();
-        Task<Product?> GetByIdAsync(Guid id);
-        Task<Product> CreateAsync(Product product);
-        Task<Product?> UpdateAsync(Product product);
+        Task<IEnumerable<ProductDto>> GetAllAsync();
+
+        Task<ProductDto?> GetByIdAsync(Guid id);
+
+        Task<ProductDto> CreateAsync(CreateProductDto request);
+
+        Task<ProductResponseDto> GetLazyLoadProduct(ProductQueryDto query);
+
         Task<bool> DeleteAsync(Guid id);
-        public Task<ProductResponseDto> GetLazyLoadProduct(ProductQueryDto model);
 
     }
 }

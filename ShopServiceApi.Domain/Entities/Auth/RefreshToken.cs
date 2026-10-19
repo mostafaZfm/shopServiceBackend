@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShopServiceApi.Infrastructure.Identity.Auth
+namespace ShopServiceApi.Domain.Entities.Auth
 {
     public class RefreshToken
     {
