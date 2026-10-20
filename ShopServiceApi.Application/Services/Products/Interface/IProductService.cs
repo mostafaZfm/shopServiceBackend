@@ -1,4 +1,5 @@
 ﻿using ShopServiceApi.Application.DTOs.Site.Products;
+using ShopServiceApi.Application.DTOs.Site.Products.Categories;
 using ShopServiceApi.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,12 @@ namespace ShopServiceApi.Application.Services.Products.Interface
         Task<ProductResponseDto> GetLazyLoadProduct(ProductQueryDto query);
 
         Task<bool> DeleteAsync(Guid id);
+
+        #region Category
+        Task<CategoryDto> CreateAsync(CreateCategoryDto request);
+
+
+        #endregion
 
     }
 }

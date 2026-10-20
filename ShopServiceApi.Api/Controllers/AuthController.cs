@@ -7,6 +7,7 @@ using ShopServiceApi.Application.DTOs.Auth;
 using ShopServiceApi.Application.Services.Auth.Interfaces;
 using ShopServiceApi.Infrastructure.Identity;
 using ShopServiceApi.Domain.Entities.Auth;
+using ShopServiceApi.Abstractions.Interfaces;
 
 
 namespace ShopServiceApi.Api.Controllers
@@ -20,18 +21,21 @@ namespace ShopServiceApi.Api.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly IApplicationDbContext _context;
 
         public AuthController(UserManager<ApplicationUser> userManager,
                            RoleManager<IdentityRole> roleManager,
                            IConfiguration configuration,
                           SignInManager<ApplicationUser> signInManager,
-                          ITokenService token)
+                          ITokenService token,
+                          IApplicationDbContext context)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
             _signInManager = signInManager;
             _token = token;
+            _context = context;
         }
         /// <summary>
         /// ثبت نام کاربر
@@ -105,48 +109,70 @@ namespace ShopServiceApi.Api.Controllers
 
 
 [HttpPost("refresh")]
-public async Task<IActionResult> Refresh([FromBody] RefreshRequestDto model)
+public async Task<IActionResult> Refresh(
+    [FromBody] RefreshRequestDto model)
         {
-            var refreshTokenEntity =
-                await _token.GetRefreshTokenAsync(model.RefreshToken);
+            await using var transaction =
+                await _context.BeginTransactionAsync();
 
-            if (refreshTokenEntity == null)
-                return Unauthorized();
-
-            var user = await _userManager.FindByIdAsync(refreshTokenEntity.UserId);
-
-            if (user == null)
-                return Unauthorized();
-
-            // ابتدا توکن قبلی را باطل می‌کنیم
-            var revoked = await _token.RevokeRefreshTokenAsync(model.RefreshToken);
-
-            if (!revoked)
-                return Unauthorized();
-
-            // توکن‌های جدید را تولید می‌کنیم
-            var roles = await _userManager.GetRolesAsync(user);
-
-            var newJwt = _token.GenerateTokenAsync(
-                user.Id,
-                user.UserName,
-                roles);
-
-            var newRefreshToken = Guid.NewGuid().ToString();
-
-            await _token.GenerateRefreshTokenAsync(
-                user.Id,
-                newRefreshToken);
-
-            return Ok(new LoginResponseDto
+            try
             {
-                IsSuccess = true,
-                Token = newJwt,
-                RefreshToken = newRefreshToken,
-                Message = "توکن‌ها با موفقیت تمدید شدند"
-            });
-        }
+                var refreshTokenEntity =
+                    await _token.GetRefreshTokenAsync(model.RefreshToken);
 
+                if (refreshTokenEntity == null)
+                {
+                    await transaction.RollbackAsync();
+                    return Unauthorized();
+                }
+
+                var user = await _userManager.FindByIdAsync(
+                    refreshTokenEntity.UserId);
+
+                if (user == null)
+                {
+                    await transaction.RollbackAsync();
+                    return Unauthorized();
+                }
+
+                var revoked = await _token.RevokeRefreshTokenAsync(
+                    model.RefreshToken);
+
+                if (!revoked)
+                {
+                    await transaction.RollbackAsync();
+                    return Unauthorized();
+                }
+
+                var roles = await _userManager.GetRolesAsync(user);
+
+                var newJwt = _token.GenerateTokenAsync(
+                    user.Id,
+                    user.UserName,
+                    roles);
+
+                var newRefreshToken = Guid.NewGuid().ToString();
+
+                await _token.GenerateRefreshTokenAsync(
+                    user.Id,
+                    newRefreshToken);
+
+                await transaction.CommitAsync();
+
+                return Ok(new LoginResponseDto
+                {
+                    IsSuccess = true,
+                    Token = newJwt,
+                    RefreshToken = newRefreshToken,
+                    Message = "توکن‌ها با موفقیت تمدید شدند"
+                });
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+        }
 
     }
 }

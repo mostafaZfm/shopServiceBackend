@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShopServiceApi.Application.DTOs.Site.Products;
+using ShopServiceApi.Application.DTOs.Site.Products.Categories;
 using ShopServiceApi.Application.Services.Products;
 using ShopServiceApi.Application.Services.Products.Interface;
 using ShopServiceApi.Domain.Entities.Products;
@@ -46,8 +47,21 @@ namespace ShopServiceApi.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CreateProductDto product)
         {
-            var created = await _service.CreateAsync(product);
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            try
+            {
+                var created = await _service.CreateAsync(product);
+
+                return CreatedAtAction(nameof(GetById),
+                    new { id = created.Id },
+                    created);
+            }
+            catch (ArgumentException ex)
+            {
+                return Conflict(new
+                {
+                    message = ex.Message
+                });
+            }
         }
 
         //[Authorize(Roles = "Admin")]
@@ -74,5 +88,8 @@ namespace ShopServiceApi.Api.Controllers
         {
            return StatusCode(200,await _service.GetLazyLoadProduct(query));
         }
+
+
+        
     }
 }

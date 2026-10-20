@@ -5,6 +5,7 @@ using ShopServiceApi.Domain.Entities.Orders;
 using ShopServiceApi.Domain.Entities.Products;
 using ShopServiceApi.Infrastructure.Identity;
 using ShopServiceApi.Domain.Entities.Auth;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace ShopServiceApi.Infrastructure.Data
 {
@@ -23,7 +24,12 @@ namespace ShopServiceApi.Infrastructure.Data
 
         public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
-protected override void OnModelCreating(ModelBuilder builder)
+        public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+        {
+            return await Database.BeginTransactionAsync(cancellationToken);
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
